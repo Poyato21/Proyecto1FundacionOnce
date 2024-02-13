@@ -1,6 +1,8 @@
 *{
     margin:0;
     padding:0;
+    scroll-behavior: smooth;
+    
 }
 
 body{
@@ -10,6 +12,7 @@ body{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color:wheat;
     background-size: cover;
+   
 }
 header{
     height: 250px;
@@ -37,26 +40,123 @@ a:hover{
     color:red;
 }
 
-section{
-    background-image: url(https://i.pinimg.com/474x/40/c7/12/40c712e5f3833bc38dbe1213da27069e.jpg);
+.primero{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap:20px;
+    padding-bottom: 150px;
 }
 
-section > img{
-    width: 300px;
+.segundo{
+    display: flex;
+    flex-direction: column;
+    background-image: url(https://i.pinimg.com/474x/40/c7/12/40c712e5f3833bc38dbe1213da27069e.jpg);
+    margin: 0 400px;
+    scroll-behavior: auto;
+    height: 650px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    align-items: center;
+  
 }
 
-section p{
-    padding: 0 500px;
+
+div img{
+    height: auto;
+    width: 75%; 
+}
+
+div p{
+    padding: 50px 50px;
     text-align: justify;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
+    font-size: 24px;
 }
 
 
 footer{
-    margin-top: 200px;
+    padding-top: 100px;
+    background-image: url(https://st4.depositphotos.com/15225220/19659/v/450/depositphotos_196593848-stock-illustration-dark-side-space-weapon-abstract.jpg);
+}
+
+
+@keyframes show{
+    from{
+        opacity:0;
+        scale:25%;
+    }
+    to{
+        opacity: 1;
+        scale: 100%;
+    }
+}
+
+
+.segundo img, .segundo p{
+    view-timeline-name: --image;
+    view-timeline-axis: block;
+    animation-timeline: --image;
+    animation-name: show;
+    animation-range: entry 0% cover 40%;
+    animation-fill-mode: both;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.footer-section h2 {
+    margin-bottom: 10px;
+}
+
+.text-input {
+    width: 100%;
+    padding: 10px 0;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.text-input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+textarea {
+    height: 150px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #007bff;
+}
+
+.footer-bottom {
+    background-color: #222;
+    text-align: center;
+    padding: 10px 0;
+    position:relative;
+    width: 100%;
+    bottom: 0;
+    left: 0;
 }
