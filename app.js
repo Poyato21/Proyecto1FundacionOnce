@@ -90,7 +90,7 @@ document.getElementById('filtro').addEventListener('click', function() {
         peliculasOrdenadas = ordenarPorAño(peliculas);
         mostrarPeliculas(peliculasOrdenadas);
         this.classList.add('activado');
-        this.innerText="filtrar por orden cronologico"
+        this.innerText="filtrar por orden cronológico"
     } else {
         console.log(peliculas);
         mostrarPeliculas(peliculas);
