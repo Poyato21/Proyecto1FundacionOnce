@@ -7,7 +7,7 @@ const peliculas = [
     },
     {
         titulo: "Episodio II: El ataque de los clones" ,
-        poster: "https://pics.filmaffinity.com/star_wars_episode_ii_attack_of_the_clones-495166632-mmed.jpg",
+        poster: "https://www.phenomena-experience.com/galeria/Historico_peliculas/A/ataque-de-los-clones-poster.jpg",
         año: 2002,
         director: "George Lucas"
     },
@@ -61,8 +61,6 @@ const peliculas = [
 
 function ordenarPorAño(peliculas) {
     peliculasOrdenadas=[...peliculas];
-    console.log(peliculasOrdenadas);
-    console.log(peliculas);
     return peliculasOrdenadas.sort((a, b) => a.año - b.año);
 }
       
@@ -73,10 +71,10 @@ function mostrarPeliculas(peliculas) {
     for (const pelicula of peliculas) {
         const template = `
         <article>
-            <h3>${pelicula.titulo}</h3>
-            <img src=${pelicula.poster} alt=${pelicula.titulo}/>
-            <h4>${pelicula.año}</h4>
-            <p>${pelicula.director}</p>
+            <h3 class = "titulo">${pelicula.titulo}</h3>
+            <img src=${pelicula.poster} alt="Poster pelicula"/>
+            <h4 class="anio">${pelicula.año}</h4>
+            <p class="director">${pelicula.director}</p>
         </article>
         `;
         seccionpel.innerHTML += template;

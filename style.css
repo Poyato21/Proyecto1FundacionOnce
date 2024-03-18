@@ -164,13 +164,25 @@ footer{
     gap: 20px;
     padding: 20px;
     grid-template-columns: repeat(3, 1fr);
-  }
+}
   
  
-  #peliculas img {
+#peliculas img {
     max-width: 100%;
-    height: auto; 
-  }
+    min-width:75%;
+    max-height:auto;
+    min-height: auto; 
+}
+#peliculas article{
+    margin: 25px 0;
+}
+.titulo{
+    margin-bottom: 15px;
+}
+.anio{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 
 .about{
     align-self: flex-start;
