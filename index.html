@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
     <link
       rel="shortcut icon"
       href="https://icons.iconarchive.com/icons/sensibleworld/starwars/512/Stormtrooper-icon.png"
@@ -21,12 +22,14 @@
         <ul>
           <li><a href="#header">Inicio</a></li>
           <li><a href="#info">Sinopsis</a></li>
+          <li><a href="#pelicula">Peliculas</a></li>
           <li><a href="#contacto">Contacto</a></li>
+          
         </ul>
       </nav>
     </header>
     <main>
-      <div class="primero">
+      <div class="primero" id="info">
         <h2>Sinopsis</h2>
         <div class="segundo">
           <p class="parrafos">
@@ -82,6 +85,17 @@
           </p>
           <img class="img-ult" src="https://www.pixelstalk.net/wp-content/uploads/2015/12/Star-Wars-Wallpaper-HD-All-Main-Characters.jpg" alt="Foto de todo el universo de Star Wars">
         </div>
+      </div>
+      <div class="primero" id="pelicula" >
+        <section id="filtrar">
+          <h2>Peliculas Saga Skywalker</h2>
+          <button id="filtro">Filtrar por año</button>
+        </section>
+        <div class="tercero">
+          <section id="peliculas">
+          </section>
+        </div>
+        
       </div>
     </main>
     <footer id="contacto">
