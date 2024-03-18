@@ -27,7 +27,7 @@ const peliculas = [
     },
     {
         titulo: "Episodio V: El imperio contraataca",
-        poster: "https://static.posters.cz/image/750/posters/star-wars-episodio-v-el-imperio-contraataca-one-sheet-i30790.jpg",
+        poster: "https://pics.filmaffinity.com/La_guerra_de_las_galaxias_Episodio_V_El_imperio_contraataca-701818523-large.jpg",
         año: 1980,
         director: "Irvin Kershner"
        
