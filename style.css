@@ -173,9 +173,11 @@ footer{
     max-height:auto;
     min-height: auto; 
 }
-#peliculas article{
+#peliculas .flip-card-inner{
     margin: 25px 0;
 }
+
+#peliculas 
 .titulo{
     margin-bottom: 15px;
 }
@@ -240,4 +242,43 @@ textarea {
     width: 100%;
     bottom: 0;
     left: 0;
+}
+
+.flip article{
+    background-color: black;
+    align-items: center;
+    text-align: justify;
+    text-transform: uppercase;
+    justify-content: center
+
+}
+.flip img{
+   display:none;
+}
+.flip .titulo{
+    display:none;
+}
+.flip .anio{
+    display:none;
+}
+.flip .director{
+    display:none;
+}
+
+.flip-card-back{
+    display:none;
+}
+.flip .flip-card-back{
+    display:block;
+    width: 100%;
+    height: 100%;
+    text-align: justify;
+    justify-content: space-around;
+    transform: none;
+    transition: none;
+
+}
+.flip-card-front:hover{
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
 }
