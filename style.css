@@ -98,9 +98,27 @@ a:hover{
     color: black;
     background-color: rgb(255, 183, 0);
 }
+#filtroSer{
+    color:rgb(255, 183, 0);
+    text-transform: uppercase;
+    text-decoration: none;
+    border:none;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: black;
+}
+
+#filtroSer:hover{
+    color: black;
+    background-color: rgb(255, 183, 0);
+}
+#filtroSer.activado{
+    color: black;
+    background-color: rgb(255, 183, 0);
+}
 
 .segundo{
-    /* justify-content: space-around; */
+    justify-content: space-around;
     display: flex;
     flex-direction: column;
     background-image: url(https://i.pinimg.com/474x/40/c7/12/40c712e5f3833bc38dbe1213da27069e.jpg);
@@ -121,7 +139,27 @@ a:hover{
     background-image: url(https://i.pinimg.com/474x/40/c7/12/40c712e5f3833bc38dbe1213da27069e.jpg);
     margin-left: 15px;
     margin-right: 15px;
+    width:auto;
 
+}
+.cuarto{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-image: url(https://i.pinimg.com/474x/40/c7/12/40c712e5f3833bc38dbe1213da27069e.jpg);
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 50%;
+}
+
+.quinto{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-image: url(https://i.pinimg.com/474x/40/c7/12/40c712e5f3833bc38dbe1213da27069e.jpg);
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 50%;
 }
 
 
@@ -165,12 +203,31 @@ footer{
     }
 }
 
+@keyframes show2{
+    from{
+        opacity:0.5;
+        scale:50%;
+    }
+    to{
+        opacity: 1;
+        scale: 100%;
+    }
+}
+
 
 .segundo img, .segundo p{
     view-timeline-name: --image;
     view-timeline-axis: block;
     animation-timeline: --image;
     animation-name: show;
+    animation-range: entry 0% cover 40%;
+    animation-fill-mode: both;
+}
+.primero{
+    view-timeline-name: --image;
+    view-timeline-axis: block;
+    animation-timeline: --image;
+    animation-name: show2;
     animation-range: entry 0% cover 40%;
     animation-fill-mode: both;
 }
@@ -214,9 +271,26 @@ footer{
     margin: 25px 0;
 }
 
-.sinPre{
-
+#series {
+    display: grid;
+    width: 100%;
+    text-align: center;
+    gap: 20px;
+    padding: 20px;
+    grid-template-columns: repeat(3, 1fr);
 }
+  
+ 
+#series img {
+    max-width: 100%;
+    min-width:75%;
+    max-height:auto;
+    min-height: auto; 
+}
+#series .flip-card-inner{
+    margin: 25px 0;
+}
+
 
 .titulo{
     margin-bottom: 15px;
@@ -284,7 +358,7 @@ textarea {
     left: 0;
 }
 
-.flip .sinPel{
+.flip article{
     background-color: black;
     align-items: center;
     text-align: justify;
@@ -322,36 +396,4 @@ textarea {
     cursor:pointer;
     transform: scale(1.1);
     transition: transform 0.3s ease;
-}
-
-.flipPre .sinPre{
-    background-color: black;
-    align-items: center;
-    text-align: justify;
-    text-transform: uppercase;
-    justify-content: center
-
-}
-.flipPre img{
-   display:none;
-}
-.flipPre .titulo{
-    display:none;
-}
-.flipPre .anio{
-    display:none;
-}
-.flipPre .director{
-    display:none;
-}
-
-.flipPre .flip-card-back{
-    display:block;
-    width: auto;
-    height: auto;
-    text-align: justify;
-    justify-content: space-around;
-    transform: none;
-    transition: none;
-
 }
