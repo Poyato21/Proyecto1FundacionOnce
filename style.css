@@ -62,7 +62,7 @@ a:hover{
     gap: 15px;
 }
 
-#filtro{
+#filtroPelis{
     color:rgb(255, 183, 0);
     text-transform: uppercase;
     text-decoration: none;
@@ -72,11 +72,29 @@ a:hover{
     background-color: black;
 }
 
-#filtro:hover{
+#filtroPelis:hover{
     color: black;
     background-color: rgb(255, 183, 0);
 }
-#filtro.activado{
+#filtroPelis.activado{
+    color: black;
+    background-color: rgb(255, 183, 0);
+}
+#filtroPre{
+    color:rgb(255, 183, 0);
+    text-transform: uppercase;
+    text-decoration: none;
+    border:none;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: black;
+}
+
+#filtroPre:hover{
+    color: black;
+    background-color: rgb(255, 183, 0);
+}
+#filtroPre.activado{
     color: black;
     background-color: rgb(255, 183, 0);
 }
@@ -176,8 +194,30 @@ footer{
 #peliculas .flip-card-inner{
     margin: 25px 0;
 }
+#precuelas {
+    display: grid;
+    width: 100%;
+    text-align: center;
+    gap: 20px;
+    padding: 20px;
+    grid-template-columns: repeat(2, 1fr);
+}
+  
+ 
+#precuelas img {
+    max-width: 100%;
+    min-width:75%;
+    max-height:auto;
+    min-height: auto; 
+}
+#precuelas .flip-card-inner{
+    margin: 25px 0;
+}
 
-#peliculas 
+.sinPre{
+
+}
+
 .titulo{
     margin-bottom: 15px;
 }
@@ -244,7 +284,7 @@ textarea {
     left: 0;
 }
 
-.flip article{
+.flip .sinPel{
     background-color: black;
     align-items: center;
     text-align: justify;
@@ -282,4 +322,36 @@ textarea {
     cursor:pointer;
     transform: scale(1.1);
     transition: transform 0.3s ease;
+}
+
+.flipPre .sinPre{
+    background-color: black;
+    align-items: center;
+    text-align: justify;
+    text-transform: uppercase;
+    justify-content: center
+
+}
+.flipPre img{
+   display:none;
+}
+.flipPre .titulo{
+    display:none;
+}
+.flipPre .anio{
+    display:none;
+}
+.flipPre .director{
+    display:none;
+}
+
+.flipPre .flip-card-back{
+    display:block;
+    width: auto;
+    height: auto;
+    text-align: justify;
+    justify-content: space-around;
+    transform: none;
+    transition: none;
+
 }

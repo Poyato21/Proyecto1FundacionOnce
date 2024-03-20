@@ -67,10 +67,30 @@ const peliculas = [
     }
 ]
 
+const precuelas=[
+    {   
+        titulo:"Han Solo: Una historia de Star Wars",
+        poster:"https://pics.filmaffinity.com/solo_a_star_wars_story-540929627-mmed.jpg",
+        año:2018,
+        director:"Ron Howard",
+        sinopsis:"Muchos años antes de conocer a Luke Skywalker y la Princesa Leia, en una galaxia donde impera el caos y existen numerosas bandas criminales, el joven Han Solo consigue huir del planeta Corellia, pero atrás queda su amada Qi'ra, y Han promete volver a por ella algún día. Tras apuntarse a la Academia Imperial para ser piloto, Han conoce a un wookie llamado Chewbacca y más tarde al famoso jugador Lando Calrissian, dueño del Halcón milenario. En una misión desesperada, Han se unirá a Tobias Beckett para obtener un valioso cargamento de coaxium, del que se extrae el hiperfuel para que las naves naveguen por el hiperespacio.",
 
-function ordenarPorAño(peliculas) {
-    peliculasOrdenadas = [...peliculas];
-    return peliculasOrdenadas.sort((a, b) => a.año - b.año);
+    },
+    {   
+        titulo:"Rogue One: Una historia de Star Wars",
+        poster:"https://pics.filmaffinity.com/rogue_one_a_star_wars_story-635726332-mmed.jpg",
+        año:2016,
+        director: "Gareth Edwards",
+        sinopsis: "El Imperio Galáctico ha terminado de construir el arma más poderosa de todas, la Estrella de la muerte, pero un grupo de rebeldes decide realizar una misión de muy alto riesgo: robar los planos de dicha estación antes de que entre en operaciones, mientras se enfrentan también al poderoso Lord Sith conocido como Darth Vader, discípulo del despiadado Emperador Palpatine. Historia ambientada entre los episodios III y IV de Star Wars.",
+
+    }
+   
+]
+
+
+function ordenarPorAño(array) {
+    ordenadas = [...array];
+    return ordenadas.sort((a, b) => a.año - b.año);
 }
 
 function mostrarPeliculas(peliculas) {
@@ -89,7 +109,7 @@ function mostrarPeliculas(peliculas) {
                         <p class="director">Director: ${pelicula.director}</p>
                     </div>
                     <div class="flip-card-back">
-                        <article>
+                        <article class="sinPel">
                             <p>${pelicula.sinopsis}</p>
                         </article>
                     </div>
@@ -100,19 +120,61 @@ function mostrarPeliculas(peliculas) {
         seccionpel.innerHTML += peliculaHTML;
     });
 }
+function mostrarPrecuelas(precuelas) {
+    const seccionpre = document.querySelector("#precuelas");
+    seccionpre.innerHTML = ""; // Limpiar la sección de películas
+        
+    precuelas.forEach(precuela => {
+        const precuelaHTML = `
+        <div class="precuela">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="${precuela.poster}" alt="Poster precuela">
+                        <h3 class="titulo">${precuela.titulo}</h3>
+                        <p class="anio">Año: ${precuela.año}</p>
+                        <p class="director">Director: ${precuela.director}</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <article class="sinPre">
+                            <p>${precuela.sinopsis}</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+        `;
+        seccionpre.innerHTML += precuelaHTML;
+    });
+}
 
 let peliculasOrdenadas = null;
 
-document.getElementById('filtro').addEventListener('click', function() {
+document.getElementById('filtroPelis').addEventListener('click', function() {
     if (peliculasOrdenadas === null) {
         peliculasOrdenadas = ordenarPorAño(peliculas);
         mostrarPeliculas(peliculasOrdenadas);
         this.classList.add('activado');
         this.innerText = "filtrar por orden cronológico";
     } else {
-        console.log(peliculas);
         mostrarPeliculas(peliculas);
         peliculasOrdenadas = null;
+        this.classList.remove('activado');
+        this.innerText = "Filtrar por año";
+    }
+});
+
+let precuelasOrdenadas = null;
+
+document.getElementById('filtroPre').addEventListener('click', function() {
+    if (precuelasOrdenadas === null) {
+        precuelasOrdenadas = ordenarPorAño(precuelas);
+        mostrarPrecuelas(precuelasOrdenadas);
+        this.classList.add('activado');
+        this.innerText = "filtrar por orden cronológico";
+    } else {
+        mostrarPrecuelas(precuelas);
+        precuelasOrdenadas = null;
         this.classList.remove('activado');
         this.innerText = "Filtrar por año";
     }
@@ -127,5 +189,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+document.addEventListener('DOMContentLoaded', function() {
+    const precuelas = document.querySelectorAll('.precuela');
+
+    precuelas.forEach(precuela => {
+        precuela.addEventListener('click', function() {
+            this.querySelector('.flip-card-inner').classList.toggle('flipPre');
+        });
+    });
+});
 
 mostrarPeliculas(peliculas);
+mostrarPrecuelas(precuelas);
